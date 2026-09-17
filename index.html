@@ -1,5 +1,35 @@
-<div class="camera-container">
-    <!-- El atributo autoplay y playsinline son vitales para que funcione bien en celulares -->
-    <video id="camara-stream" autoplay playsinline muted></video>
-    <button id="btn-iniciar" class="btn-camara">Activar Cámara para Semáforo</button>
-</div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asistente de Semáforo para Ciegos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="app-header">
+        <h1>Asistente Vial</h1>
+        <p>Apunta con la cámara al semáforo</p>
+    </header>
+
+    <main class="app-main">
+        <div class="camera-card">
+            <!--camara trasera-->
+            <video id="camara-stream" autoplay playsinline muted></video>
+            
+            <!--estado de la detección -->
+            <div id="estado-overlay" class="overlay-espera">
+                <span>Esperando activación...</span>
+            </div>
+        </div>
+
+        <!-- boton de accesibilidad -->
+        <button id="btn-iniciar" class="btn-gigante">
+            🎙️ Activar Asistente y Cámara
+        </button>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

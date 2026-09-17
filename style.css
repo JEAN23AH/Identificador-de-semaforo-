@@ -1,25 +1,102 @@
-.camera-container {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
+/* =========================================
+   ESTILOS GRÁFICOS: PWA SEMÁFORO ACCESIBLE
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background-color: #0b0f19; /* Fondo oscuro moderno de alta visibilidad */
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 15px;
+}
+
+/* Cabecera */
+.app-header {
     text-align: center;
+    margin-bottom: 20px;
+}
+
+.app-header h1 {
+    font-size: 1.8rem;
+    color: #38bdf8; /* Azul claro destacado */
+    margin-bottom: 5px;
+}
+
+.app-header p {
+    font-size: 0.95rem;
+    color: #94a3b8; /* Gris suave */
+}
+
+/* Contenedor Principal / Tarjeta de la Cámara */
+.app-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.camera-card {
+    position: relative;
+    width: 100%;
+    height: 60vh; /* Ocupa gran parte de la pantalla del celular */
+    background-color: #1e293b;
+    border: 2px solid #334155;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
 #camara-stream {
     width: 100%;
-    height: 400px;
-    object-fit: cover; /* Ajusta el video para que llene el espacio sin deformarse */
-    border-radius: 12px;
-    background-color: #000;
+    height: 100%;
+    object-fit: cover; /* Llena el espacio sin distorsionar la cámara */
 }
 
-.btn-camara {
-    margin-top: 15px;
-    padding: 12px 20px;
-    background-color: #28a745;
-    color: white;
+/* Capa superpuesta de estado */
+.overlay-espera {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(5px);
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #f8fafc;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Botón Gigante Accesible */
+.btn-gigante {
+    width: 100%;
+    padding: 20px;
+    background-color: #10b981; /* Verde brillante llamativo */
+    color: #ffffff;
     border: none;
-    border-radius: 8px;
-    font-size: 16px;
+    border-radius: 16px;
+    font-size: 1.2rem;
+    font-weight: bold;
     cursor: pointer;
+    box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-gigante:active {
+    transform: scale(0.97); /* Efecto de presión al tocar la pantalla */
+    background-color: #059669;
 }
