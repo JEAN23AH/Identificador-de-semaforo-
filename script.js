@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Configuramos constraints para solicitar preferiblemente la cámara trasera ("environment")
             const constraints = {
                 video: {
-                    facingMode: { exact: "environment" } // Forzar cámara trasera. Si falla en PC, usa solo { facingMode: "environment" }
+                    facingMode: "environment"  // Forzar cámara trasera. Si falla en PC, usa solo { facingMode: "environment" }
                 }
             };
 
